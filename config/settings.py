@@ -87,8 +87,9 @@ DATABASES = {
         "USER": os.getenv("USER"),
         "PASSWORD": os.getenv("PASSWORD"),
         "OPTIONS": {"client_encoding": "utf8"},
-        "HOST": os.getenv("HOST"),
         "PORT": os.getenv("PORT"),
+        "HOST": os.getenv("HOST"),
+
     }
 }
 # print(DATABASES['default']['NAME'])
@@ -159,8 +160,8 @@ EMAIL_HOST = "smtp.yandex.ru"
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = "sochnevvasiliy1992@yandex.ru"
-EMAIL_HOST_PASSWORD = "hhirlubevlorkxvn"
+EMAIL_HOST_USER = "sokorev.sod@yandex.ru"
+EMAIL_HOST_PASSWORD = "12345"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 

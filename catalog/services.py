@@ -39,3 +39,4 @@ class ProductService:
     def get_published_products_by_category_name(cls, name_category):
         return Product.objects.filter(name_category=name_category, unpublish_product=True)
 
+
