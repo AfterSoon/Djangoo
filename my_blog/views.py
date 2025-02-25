@@ -2,6 +2,9 @@ from my_blog.models import My_blog
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
+from django.shortcuts import render, redirect
+from .models import My_blog
+from .forms import BlogForm
 
 
 class My_blogCreateView(CreateView):
@@ -47,3 +50,19 @@ class My_blogDeleteView(DeleteView):
     model = My_blog
     template_name = "my_blogs/my_blogs_confirm_delete.html"
     success_url = reverse_lazy("my_blog:my_blogs_list")
+
+
+def blog_list(request):
+    blogs = My_blog.objects.all()
+    return render(request, 'blog/blog_list.html', {'blogs': blogs})
+
+
+def add_blog(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_list')
+    else:
+        form = BlogForm()
+    return render(request, 'blog/add_blog.html', {'form': form})

@@ -26,6 +26,10 @@ urlpatterns = [
         views.My_blogDeleteView.as_view(),
         name="my_blog_delete",
     ),
+    path('add_my_blogs/',
+        views.add_blog,
+        name='add_my_blogs',
+    ),
 ]
 
 if settings.DEBUG:
