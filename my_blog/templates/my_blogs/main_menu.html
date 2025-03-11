@@ -4,4 +4,13 @@
         <a class="p-2 btn btn-outline-primary" href="/">Каталог</a>
         <a class="p-2 btn btn-outline-primary" href="/contacts/">Контакты</a>
     </nav>
+    <a href="{% url 'blog-add' %}" class="btn btn-primary">Добавить запись</a>
+
+<h1>Все блоги</h1>
+<ul>
+    {% for blog in blogs %}
+        <li>{{ blog.title }}</li>
+    {% endfor %}
+</ul>
+
 </div>
